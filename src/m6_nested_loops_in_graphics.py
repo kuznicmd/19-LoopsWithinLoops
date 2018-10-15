@@ -11,7 +11,7 @@ import rosegraphics as rg
 
 def main():
     """ Calls the other functions to demonstrate them. """
-    #run_test_draw_L()
+    run_test_draw_L()
     run_test_draw_wall_on_right()
 
 
@@ -147,15 +147,16 @@ def draw_wall_on_right(rectangle, n, window):
     and n is a small, positive integer.
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
 
     original_corner_1 = rectangle.corner_1
     original_corner_2 = rectangle.corner_2
 
-    c1 = original_corner_1
-    c2 = original_corner_2
+    c1 = rg.Point(original_corner_1.x, original_corner_1.y)
+    c2 = rg.Point(original_corner_2.x, original_corner_2.y)
+
     for k in range(n):
         for j in range(k + 1):
             new_rectangle = rg.Rectangle(c1, c2)
